@@ -13,8 +13,8 @@ public class GuideTouristiqueResource {
     @GET
     @Path("lieu/{ville_ou_pays}")
     @Produces("application/json")
-    public String guide(@PathParam("ville_ou_pays") String lieu) {
-        return llmClient.getGuide(lieu);
+    public String guide(@PathParam("ville_ou_pays") String lieu,@QueryParam("nb") @DefaultValue("2") int nb) {
+        return llmClient.getGuide(lieu,nb);
     }
 
     //@GET

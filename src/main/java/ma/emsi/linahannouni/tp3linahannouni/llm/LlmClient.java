@@ -14,7 +14,7 @@ public class LlmClient {
 
     public LlmClient() {
         ChatModel model = GoogleAiGeminiChatModel.builder()
-                .apiKey(System.getenv("GEMINI_KEY")) 
+                .apiKey(System.getenv("GEMINI_KEY"))
                 .modelName("gemini-2.5-flash")
                 .build();
 
@@ -24,7 +24,7 @@ public class LlmClient {
                 .build();
     }
 
-    public String getGuide(String lieu) {
-        return guideTouristique.genererGuide(lieu);
+    public String getGuide(String lieu ,int nb) {
+        return guideTouristique.genererGuide(lieu,nb);
     }
 }
